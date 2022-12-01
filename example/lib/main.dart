@@ -324,8 +324,6 @@ class MyHomePageState extends State<MyHomePage> {
                           .widget!
                           .call(context, buildChildren),
                     )),
-            audioMatcher(): audioRender(),
-            iframeMatcher(): iframeRender(),
             mathMatcher():
                 mathRender(onMathError: (error, exception, exceptionWithType) {
               debugPrint(exception);
@@ -353,7 +351,6 @@ class MyHomePageState extends State<MyHomePage> {
             // Custom placeholder image for broken links
             networkSourceMatcher():
                 networkImageRender(altWidget: (_) => const FlutterLogo()),
-            videoMatcher(): videoRender(),
           },
           onLinkTap: (url, _, __, ___) {
             debugPrint("Opening $url...");
